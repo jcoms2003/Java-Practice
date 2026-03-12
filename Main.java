@@ -1,4 +1,4 @@
-public class Main {
+/*public class Main {
 	public static void main(String[] args) {
 		
 	}
@@ -42,7 +42,51 @@ public class Main {
 	else (x > y) {
 		System.out.println("WOW");
 	}
-	*/
+	
+class Main{
+    public static void main(String[] args) {
+    
 }
+}
+    sealed interface BinaryTree {
+      record Leaf(int value) implements BinaryTree {}
+      record Node(BinaryTree lhs,
+                BinaryTree rhs,
+                int value) implements BinaryTree {}
+    }
 
+    class Hello {
+      static int sum(BinaryTree tree) {
+        return switch (tree) {
+        case BinaryTree.Leaf(var value) -> value;
+        case BinaryTree.Node(var lhs, var rhs, var value) -> sum(lhs) + value + sum(rhs);
+        };
+      }
+    
+      public static void main(String... args) {
+        var tree = new BinaryTree.Node(
+                                       new BinaryTree.Leaf(1),
+                                       new BinaryTree.Node(
+                                                           new BinaryTree.Leaf(2),
+                                                           new BinaryTree.Leaf(3),
+                                                           4),
+                                       5);
+        System.out.println(tree);
+        System.out.println("Sum: " + sum(tree));
+      }
+    }
 
+*/
+
+public class Main{
+	public static void main(String[] args) {
+		int x, y, z = 5;
+		boolean t = true;
+		if (t) {
+			System.out.println("True");
+		}
+		else {
+			System.out.println("False");
+		}
+	}
+}
