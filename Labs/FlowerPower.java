@@ -39,11 +39,11 @@ public class FlowerPower {
 
     public void setShape(int shape) { this.shape = shape; }
     
-    public String flowerComment(){
+    public String flowerComment() {
         if (getSize() > 6 || getColor() == "green") {
             return "What a weird flower!";
         }
-        else{
+        else {
             return "How pretty!";
         }
 
