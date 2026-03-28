@@ -45,6 +45,22 @@ public class Sandwich {
     public String getBread() {
         return bread;
     }
+    // Getter for meat
+    public String getMeat() {
+        return meat;
+    }
+    // Getter for sauce
+    public String getSauce() {
+        return sauce;
+    }
+    // Getter for topping
+    public String getTopping() {
+        return topping;
+    }
+    // Getter for size
+    public int getSize() {
+        return size;
+    }
 
     // Overide toString
     @Override
@@ -62,5 +78,6 @@ public class Sandwich {
         sandwich1.setBread("Wheat");
         System.out.println(sandwich1);
         System.out.println(sandwich1.getBread());
+        System.out.println(sandwich1.getSauce());
     }
 }
