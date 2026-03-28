@@ -61,6 +61,18 @@ public class Sandwich {
     public int getSize() {
         return size;
     }
+    public String sizeToString() {
+        switch (size){
+            case 3:
+                return "Small";
+            case 6:
+                return "Med";
+            case 12:
+                return "Large";
+            default:
+                return "Med";
+        }
+    }
 
     // Overide toString
     @Override
@@ -79,5 +91,6 @@ public class Sandwich {
         System.out.println(sandwich1);
         System.out.println(sandwich1.getBread());
         System.out.println(sandwich1.getSauce());
+        System.out.println(sandwich1.sizeToString());
     }
 }
