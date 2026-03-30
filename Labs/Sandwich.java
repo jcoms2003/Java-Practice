@@ -88,6 +88,9 @@ public class Sandwich {
         return Arrays.toString(str);
     }
 
+    // User input
+    
+
     // Overide toString
     @Override
     public String toString() {
