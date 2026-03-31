@@ -50,8 +50,12 @@ public class Drink {
         }
     }
 
-    public static void main(String [] args) {
+    // Testing method
+    public static void testing() {
         Drink drink1 = new Drink("Pepsi", "", "", 32);
-        System.out.println(drink1.getSize());
+        System.out.println("TESTING: " + drink1.getSize());
+    }
+    public static void main(String [] args) {
+        testing();
     }
 }
