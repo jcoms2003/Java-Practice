@@ -4,7 +4,7 @@ public class Drink {
     private String coffee;
     private int size;
 
-    public void drink(String soda, String tea, String coffee, int size) {
+    public Drink(String soda, String tea, String coffee, int size) {
         this.soda = soda;
         this.tea = tea;
         this.coffee = coffee;
@@ -12,31 +12,46 @@ public class Drink {
     }
 
     // Setters
-    public void soda(String sodaType) {
-        soda = sodaType;
+    public void setSoda(String sod) {
+        soda = sod;
     }
-    public void tea(String teaType) {
-        tea = teaType;
+    public void setTea(String te) {
+        tea = te;
     }
-    public void coffee(String coffeeType) {
-        coffee = coffeeType;
+    public void setCoffee(String cof) {
+        coffee = cof;
     }
-    public void size(String sizeType) {
+    public void setSize(int siz) {
+        size = siz;
+    }
+
+    // Getters
+    public String getSoda() {
+        return soda;
+    }
+    public String getTea() {
+        return tea;
+    }
+    public String getCoffee() {
+        return coffee;
+    }
+    public String getSize() {
         switch (size){
             case 12:
-                sizeType = "Small";
+                return "Small";
             case 18:
-                sizeType = "Medium";
+                return "Medium";
             case 24:
-                sizeType = "Large";
+                return "Large";
             case 32:
-                sizeType = "X-Large";
+                return "X-Large";
             default:
-                sizeType = "Medium";
-                break;
+                return "Medium";
         }
     }
-    public static void main(String [] args) {
 
+    public static void main(String [] args) {
+        Drink drink1 = new Drink("Pepsi", "", "", 32);
+        System.out.println(drink1.getSize());
     }
 }
