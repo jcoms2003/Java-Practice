@@ -7,14 +7,16 @@ public class Vehicle {
     private int year;
     private double dailyRate;
     private boolean isRented;
+    private String engineType;
 
     // Vehicle constructor
-    public Vehicle(String make, String model, int year, double dailyRate, boolean isRented) {
+    public Vehicle(String make, String model, int year, double dailyRate, boolean isRented, String engineType) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.dailyRate = dailyRate;
         this.isRented = isRented;
+        this.engineType = engineType;
     }
     
     // Getters
@@ -54,12 +56,12 @@ public class Vehicle {
     // Override to string
     @Override
     public String toString() {
-        return "Vic: " + make + " " + model + " " + year + " " + dailyRate + " " + isRented;
+        return "Vic: " + make + " " + model + " " + year + " " + dailyRate + " " + isRented + " " + engineType;
     }
 
     // Testing method
     public static void testing() {
-        Vehicle vic1 = new Vehicle("Chevy", "Cruze", 2011, 95.0, false);
+        Vehicle vic1 = new Vehicle("Chevy", "Cruze", 2011, 95.0, false, "V4");
         vic1.setDailyRate(55.0);
         System.out.println(vic1);
     }
