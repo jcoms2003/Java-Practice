@@ -29,11 +29,11 @@ public class Car extends Vehicle{
     // Override to string
     @Override
     public String toString() {
-        return super.toString() + "(isConvertable: " + isConvertable + ") " +  "(numDoors: " + numDoors + ")";
+        return super.toString() + " (isConvertable: " + isConvertable + ") " +  "(numDoors: " + numDoors + ")";
     }
     // Main method
     public static void main(String [] args) {
-        
-        testing();
+        Vehicle vic2 = new Car("Kia", "Forte", 2024, 85.0, false, "V4", false, 4);
+        System.out.println(vic2);
     }
 }
