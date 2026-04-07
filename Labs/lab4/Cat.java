@@ -1,8 +1,11 @@
 public class Cat extends Pets {
     public Cat(String name, String breed){
-      //TODO Student Code
+      super(name, breed);
     }
-    //TODO Student Code -- Write an override for makeNoise() and for getName()
+    @Override
+    public String makeNoise() {
+      return "meow";
+    }
     
     public static void main(String[] args){
 
