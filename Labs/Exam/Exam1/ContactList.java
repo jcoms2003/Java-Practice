@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 
-public class ContactList {
+public class ContactList extends Contact{
     private ArrayList<Contact> contacts;
 
     /** provided methods - used for testing  - do not modify */
