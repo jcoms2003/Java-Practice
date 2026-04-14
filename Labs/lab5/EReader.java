@@ -48,10 +48,10 @@ public class EReader {
      * This method's job is to return the next line in the fileReader
      */
     public String displayLine() {
-            if (fileln.hasNextLine()) {
-                return fileln.nextLine();
-            } 
-            return "End of file";  
+        if (fileln.hasNextLine()) {
+            return fileln.nextLine();
+        }
+        return "End of file";  
     }
 
     /**
@@ -64,36 +64,50 @@ public class EReader {
      * If the user enters "x", exit the loop.
      */
 public void openBook() {
-    String input = "";
-    while (true) {
-        input = userInput.nextLine(); 
+    try {
+        String input = " ";
+        while (!input.equalsIgnoreCase("x")) {
+            input = userInput.nextLine(); 
 
-        if (input.equalsIgnoreCase("x")) {
-            break;
-        }
-
-  
-        if (input.isEmpty() || !input.equalsIgnoreCase("x")) {
-            if (fileln.hasNext()) {
-                System.out.println(displayLine());
-            } else {
-                System.out.println("End of file.");
+            if (input.equalsIgnoreCase("x")) {
                 break;
+            }
+
+            if (input.isEmpty() || !input.equalsIgnoreCase("x")) {
+                if (fileln.hasNext()) {
+                    System.out.println(displayLine());
+                } else {
+                    System.out.println("End of file.");
+                    break;
+                }
             }
         }
     }
-}
+    catch(NullPointerException e) {
+        System.out.println("Error is here");
+        e.printStackTrace();
+    }
+    }
     public void go(){
         options();
         String input = userInput.nextLine();
-        while(!input.equalsIgnoreCase("x")){
-            String bookName = books.get(Integer.parseInt(input) - 1);
-            System.out.println("Now opening: " + bookName);
-            System.out.println();
-            loadBook(bookName);
-            System.out.println("Press Enter to go to next line, or enter X to close the book.");
-            openBook();
-            System.out.println("Closing book...");
+        while (!input.equalsIgnoreCase("x")) {
+            try {
+                int bookIndex = Integer.parseInt(input) - 1;
+                if (bookIndex >= 0 && bookIndex < books.size()) {
+                    String bookName = books.get(bookIndex);
+                    System.out.println("Now opening: " + bookName);
+                    System.out.println();
+                    loadBook(bookName);
+                    System.out.println("Press Enter to go to next line, or enter X to close the book.");
+                    openBook();
+                    System.out.println("Closing book...");
+                } else {
+                    System.out.println("Invalid book number. Please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number or X to exit.");
+            }
             options();
             input = userInput.nextLine();
         }
