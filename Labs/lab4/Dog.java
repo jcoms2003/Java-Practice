@@ -9,7 +9,7 @@ public class Dog extends Pets {
     }
   
     //This function should take in a number, multiply it by seven, and then return the appropriate string depending on if the number is even or odd
-    public static String playFetch(int num){
+    public String playFetch(int num){
       int result = num * 7;
       if ((result % 2) == 0) {
         return "returned the ball";
@@ -20,7 +20,7 @@ public class Dog extends Pets {
     }
   
     public static void main(String[] args){
-      System.out.println(playFetch(1));
-      System.out.println(playFetch(2));
+      // System.out.println(playFetch(1));
+      // System.out.println(playFetch(2));
     }
 }
