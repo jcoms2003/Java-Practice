@@ -1,27 +1,40 @@
 public class MOB implements Attributes {
+    protected int armor;
+    protected int damage;
+    protected DiceType damageDie;
+    protected int hitModifier;
+    protected int maxHP;
+    private final String name;
+
+    // MOB Constructor
+    public MOB(String name, int hp, int armor, int hitModifier, DiceType damageDie) {
+        this.name = name;
+        this.hp = hp;
+        this.armor = armor;
+        this.hitModifier = hitModifier;
+        this.damageDie = damageDie;
+    }
+
+    
 
     @Override
     public int getArmor() {
-        // TODO Auto-generated method stub
         return armor;
     }
 
     @Override
     public int getMaxHP() {
-        // TODO Auto-generated method stub
-        return 0;
+        return maxHP;
     }
 
     @Override
     public DiceType getDamageDie() {
-        // TODO Auto-generated method stub
-        return null;
+        return damageDie;
     }
 
     @Override
     public int getHitModifier() {
-        // TODO Auto-generated method stub
-        return 0;
+        return hitModifier;
     }
     
     public static void main(String[] args) {
