@@ -6,7 +6,10 @@ public class Fact {
 			return 1;
 		} return f * fact(f-1);
 	}
-	public static String reverse(String s,s.length()-1 {
+	public static reverse(String s) {
+		return reverse(s, s.length() - 1);
+	}
+	public static String reverse(String s) {
 		String reversed = "";
 		if(index < 0) {return "";}
 		return s.charAt(index) + reverse(s,index - 1);
